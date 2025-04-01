@@ -153,3 +153,27 @@ prevButton.addEventListener('click', () => {
 const autoplay = setInterval(() => {
   nextImage();
 }, 2000);
+
+// click sulla thumbnail porta direttamente l'immagine attiva alla thumbnail cliccata
+thumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener('click', () => {
+    // rimuovo la classe active dall'elemento attualmente attivo
+    images[activeImage].classList.remove('active');
+    // rimuovo la classe active-thumbnail dall'elemento attualmente attivo
+    thumbnails[activeImage].classList.remove('active-thumbnail');
+    // cambio l'indice attivo
+    activeImage = index;
+    // aggiungo la classe active all'elemento attualmente attivo
+    images[activeImage].classList.add('active');
+    // aggiungo la classe active-thumbnail all'elemento attualmente attivo
+    thumbnails[activeImage].classList.add('active-thumbnail');
+
+    // blocco autoplay per 10 secondi
+    clearInterval(autoplay);
+    setTimeout(() => {
+      autoplay = setInterval(() => {
+        nextImage();
+      }, 2000);
+    }, 10000);
+  })
+})
