@@ -10,13 +10,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #carousel{
-    width: 900px;
-    height: 500px;
+    width: 990px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 20px 0;
 }
 
 #carousel i{
@@ -25,11 +27,11 @@
     border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
+    margin: 30px;
 }
 
 .gallery{
-    width: 100%;
-    margin: 30px;
+    width: 780px;
     position: relative;
 }
 
@@ -54,4 +56,28 @@
     text-align: right;
     padding: 20px;
     text-shadow: 0 0 5px black;
+}
+
+#thumbnails{
+    display: flex;
+    justify-content: space-evenly;
+    width: 780px;
+}
+
+#thumbnails img{
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    display: block;
+}
+
+.thumbnail-card{
+    width: 150px;
+    border-radius: 20px;
+}
+
+.active-thumbnail{
+    filter: grayscale(0%);
+    box-shadow: 0px 0px 20px 5px #5582ff;
 }

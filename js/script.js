@@ -108,6 +108,6 @@ prevButton.addEventListener('click', () => {
 })
 
 // autoplay
-const autoplay = setInterval(() => {
-  nextImage();
-}, 2000);
+// const autoplay = setInterval(() => {
+//   nextImage();
+// }, 2000);
