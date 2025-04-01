@@ -1,0 +1,3 @@
+auto play
+carosello infinito
+array di oggetti con immagine, nome e descrizione
