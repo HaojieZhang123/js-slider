@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding-top: 20px;
 }
 
 #carousel i{
@@ -62,11 +62,12 @@
     display: flex;
     justify-content: space-evenly;
     width: 780px;
+    padding: 20px 0;
     overflow-y: auto;
 }
 
-#thumbnails img{
-    width: 100%;
+.thumbnail-card img{
+    height: 100%;
     border-radius: 20px;
     cursor: pointer;
     filter: grayscale(100%);
@@ -74,11 +75,12 @@
 }
 
 .thumbnail-card{
-    width: 150px;
+    height: 80px;
     border-radius: 20px;
 }
-
 .active-thumbnail{
+    box-shadow: 0px 0px 10px 5px #5582ff;
+}
+.thumbnail-card.active-thumbnail img{
     filter: grayscale(0%);
-    box-shadow: 0px 0px 20px 5px #5582ff;
 }

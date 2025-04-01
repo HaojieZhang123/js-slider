@@ -86,6 +86,9 @@ renderThumbnails(pics);
 const nextImage = () => {
   // rimuovo la classe active dall'elemento attualmente attivo
   images[activeImage].classList.remove('active');
+  // rimuovo la classe active-thumbnail dall'elemento attualmente attivo
+  thumbnails[activeImage].classList.remove('active-thumbnail');
+
   // incremento l'indice
   activeImage++;
   // se l'indice è maggiore di 4, resetto l'indice a 0
@@ -94,12 +97,18 @@ const nextImage = () => {
   }
   // aggiungo la classe active all'elemento attualmente attivo
   images[activeImage].classList.add('active');
+  // aggiungo la classe active-thumbnail all'elemento attualmente attivo
+  thumbnails[activeImage].classList.add('active-thumbnail');
+
 }
 
 // funzione all'indietro
 const prevImage = () => {
   // rimuovo la classe active dall'elemento attualmente attivo
   images[activeImage].classList.remove('active');
+  // rimuovo la classe active-thumbnail dall'elemento attualmente attivo
+  thumbnails[activeImage].classList.remove('active-thumbnail');
+  
   // incremento l'indice
   activeImage--;
   // se l'indice è maggiore di 4, resetto l'indice a 0
@@ -108,6 +117,8 @@ const prevImage = () => {
   }
   // aggiungo la classe active all'elemento attualmente attivo
   images[activeImage].classList.add('active');
+  // aggiungo la classe active-thumbnail all'elemento attualmente attivo
+  thumbnails[activeImage].classList.add('active-thumbnail');
 }
 
 
@@ -119,6 +130,10 @@ const images = document.querySelectorAll('#carousel figure');
 console.log(images);
 // rendo attiva la prima immagine
 images[activeImage].classList.add('active');
+
+// faccio lavoro simile per thumbail
+const thumbnails = document.querySelectorAll('#thumbnails .thumbnail-card');
+thumbnails[activeImage].classList.add('active-thumbnail');
 
 
 // evento per cambiare immagine al click
@@ -135,6 +150,6 @@ prevButton.addEventListener('click', () => {
 })
 
 // autoplay
-// const autoplay = setInterval(() => {
-//   nextImage();
-// }, 2000);
+const autoplay = setInterval(() => {
+  nextImage();
+}, 2000);
