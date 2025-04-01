@@ -37,6 +37,17 @@ const createImage = (galleryImage) => {
   return img;
 }
 
+// funzione che crea la singola thumbnail
+const createThumbnail = (galleryImage) => {
+  // destrutturiamo il parametro passato nelle sue proprieta'
+  const { image } = galleryImage;
+  // creo DOM HTML della thumbnail da inserire
+  let img = `<div class="thumbnail-card">
+                <img src="./${image}" alt="">
+            </div>`;
+  return img;
+}
+
 // funzione di renderizzazione dell'immagine
 const renderImages = (pics) => {
   let images = '';
@@ -51,7 +62,23 @@ const renderImages = (pics) => {
   }
 }
 
+// funzione di renderizzazione della thumbnail
+const renderThumbnails = (pics) => {
+  let thumbnails = '';
+  // prendo il container dove inserire le immagini
+  const thumbnailsContainer = document.querySelector('#thumbnails');
+  // per ogni immagine nell'array di oggetti
+  for (let i = 0; i < pics.length; i++) {
+    // creo la singola thumbnail
+    thumbnails += createThumbnail(pics[i]);
+    // la inserisco nel container
+    thumbnailsContainer.innerHTML = thumbnails;
+  }
+}
+
 renderImages(pics);
+
+renderThumbnails(pics);
 
 
 
